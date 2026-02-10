@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Item form Page</title></head>
+<body>
+<h1 th:text="${title}">title</h1>
+<p th:if="${error != null}" th:text="${error}" style="text-color:red"></p>
+<form th:object="${item}"
+      th:action="${mode == 'edit'} ? @{items/edit/{id}/(id=${id})} : @{/items}"
+      method="post">
+
+    <input type="text" th:field="*{name}" placeholder="Name"/>
+    <input type="text" th:field="*{description}" placeholder="Description"/>
+    <input type="number" step="0.01" th:field="*{price}" placeholder="Price"/>
+    <input type="text" th:field="*{category}" placeholder="Category"/>
+
+    <button type="submit" th:text="${mode == 'edit'} ? 'Update' : 'Save'">Unloaded</button>
+</form>
+<a th:href="@{/items}">Back to list</a>
+</body>
+</html>

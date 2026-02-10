@@ -3,5 +3,14 @@
 <head><meta charset="UTF-8"><title>Home</title></head>
 <body>
 <h1 th:text="${title}">title</h1>
+<a th:href="@{/items}">
+    <button type="button">Show items table</button>
+</a>
+<a th:href="@{/items/new}">
+    <button type="button">Show add item form</button>
+</a>
+
+
+
 </body>
 </html>
