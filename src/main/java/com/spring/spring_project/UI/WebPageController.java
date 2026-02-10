@@ -12,4 +12,10 @@ public class WebPageController {
         model.addAttribute("title", "UI Home");
         return "index";
     }
+
+    @GetMapping("/somepage")
+    public String somepage(Model model) {
+        model.addAttribute("title", "Somepage");
+        return "somepage";
+    }
 }
